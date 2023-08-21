@@ -4,6 +4,14 @@
 }
 
 .images{
-    height: 30vh;
-    width: 30vh;
+    height: 5vh;
+    width: 5vh;
 }
+
+.background-container {
+    background-image: url('../Project CSS/background.jpeg');
+    background-size: cover;
+    background-position: center center;
+    width: 100vw; 
+    height: 100vh; 
+  }
