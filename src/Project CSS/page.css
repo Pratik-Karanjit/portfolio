@@ -1,17 +1,59 @@
-.description{
-    margin-left: 30vh;
-    margin-top: 30vh;
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
 }
 
-.images{
-    height: 5vh;
-    width: 5vh;
+.content {
+  display: flex;
+  align-items: center;
 }
 
-.background-container {
-    background-image: url('../Project CSS/background.jpeg');
-    background-size: cover;
-    background-position: center center;
-    width: 100vw; 
-    height: 100vh; 
+.text {
+  margin-right: 2rem;
+  color: white;
+  opacity: 0; /* Initially set opacity to 0 */
+  animation: fadeIn 2s ease-in-out forwards; /* Use the 'fadeIn' animation */
+}
+
+.text h1 {
+  font-size: 5rem; 
+  font-family: 'Black Chancery', sans-serif; 
+  font-weight: bold;
+}
+
+.images {
+  padding-top: 2rem;
+  padding-left: 15rem;
+}
+
+.me {
+  height: 40rem;
+  width: 40rem;
+  border-radius: 10%;
+
+}
+
+.hero {
+  background-image: url('../Project CSS/black.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optionally add a slight vertical movement */
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

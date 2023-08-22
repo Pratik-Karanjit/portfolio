@@ -1,103 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import '../Project CSS/page.css'; // Import the external CSS file
-import fbicon from '../Project CSS/facebook.png';
-import lnicon from '../Project CSS/linkedin.png';
-import ghicon from '../Project CSS/github.png';
-
+import fbicon from '../Project CSS/me.png';
 
 const About = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimate(true);
+    }, 500); 
+
+    setTimeout(() => {
+      setAnimate(false);
+    }, 2500); 
+  }, []);
+
   return (
-    <div className='background-container'>
-
     <div className='description'>
-    <h1>Pratik Karanjit</h1>
-    <h2>Full Stack Developer</h2>
-    <div className='images'>
-    <img src= {fbicon} alt='facebook' />
-    <img src= {lnicon} alt='linkedin' />
-    <img src= {ghicon} alt='github' />
+      <div className={`content ${animate ? 'animated' : ''}`}>
+        <div className='text'>
+          <h1>Hi, <br /> I'm Pratik</h1>
+          <h3>Based in Kathmandu, I am pursuing my Bachelors Degree<br></br> at Islington College.
+          My skills lie in developing websites <br></br>and I have expertise in the MERN Stack. 
+          Join me on my <br></br>journey as I create innovative web solutions.</h3>
+        </div>
+        <div className='images'>
+          <img src={fbicon} className='me' alt='me' />
+        </div>
+      </div>
     </div>
-    </div>
-
-
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      hello
-    </div>
-  )
+  );
 }
 
-export default About
+export default About;
