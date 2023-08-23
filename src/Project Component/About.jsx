@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Project CSS/page.css'; // Import the external CSS file
-import fbicon from '../Project CSS/me.png';
+import fbicon from '../Project CSS/mee.png';
 
 const About = () => {
   const [animate, setAnimate] = useState(false);

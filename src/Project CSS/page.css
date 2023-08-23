@@ -23,10 +23,13 @@
   font-family: 'Black Chancery', sans-serif; 
   font-weight: bold;
 }
+.text h3{
+  font-weight: lighter;
+}
 
 .images {
   padding-top: 2rem;
-  padding-left: 15rem;
+  padding-left: 5rem;
 }
 
 .me {
