@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import '../Project CSS/createAccount.css'
+import '../Project CSS/contact.css'
 
 
 const ContactPage = () => {
@@ -12,10 +12,9 @@ const ContactPage = () => {
   let initialValues = {
     fName: '',
     lName: '',
-    dob: '',
-    password: '',
     email: '',
-    role: 'customer',          //customer, admin and superAdmin roles are available
+    companyWebsite:'',
+    description: '',
   };
 
 
@@ -36,129 +35,90 @@ const ContactPage = () => {
   };
 
   let validationSchema = yup.object({
-    fName: yup.string().required('Full Name is required. '),
-    lName: yup.string().required('Full Name is required. '),
-    dob: yup.string().required('DOB is required. '),
-    password: yup.string().required('Password is required. '),
+    fName: yup.string().required('First Name is required. '),
+    lName: yup.string().required('Last Name is required. '),
     email: yup.string().required('Email is required. '),
-    role: yup.string(),
+    description: yup.string().required('Description is required. '),
   });
-
-  let roleOptions = [
-    {
-      label: 'Select Role',
-      value: '',
-      disabled: true,
-    },
-    {
-      label: 'Admin',
-      value: 'admin',
-    },
-    {
-      label: 'Customer',
-      value: 'customer',
-    },
-    {
-      label: 'superAdmin',
-      value: 'superAdmin',
-    },
-  ];
-
+  
   return (
-    <div className="form-container">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        {(formik) => {
-          return (
-            <Form>
+    <div className="contact-section">
+      <h1>Contact</h1>
+      <h2>Get in touch via the contact form below and <br></br>I'll come back to you as soon as possible.</h2>
+      <div className="form-container">
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          {(formik) => {
+            return (
+              <Form>
+              <div className="form-row">
+                <div className="form-element-spacing">
+                  <input
+                    type="text"
+                    id="fName"
+                    placeholder="First Name*"
+                    {...formik.getFieldProps('fName')}
+                    className="form-input"
+                    required
+                  />
+                </div>
+                <div className="form-element-spacing">
+                  <input
+                    type="text"
+                    id="lName"
+                    placeholder="Last Name*"
+                    {...formik.getFieldProps('lName')}
+                    className="form-input"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="form-element-spacing">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email*"
+                    {...formik.getFieldProps('email')}
+                    className="form-input"
+                    required
+                  />
+                </div>
+                <div className="form-element-spacing">
+                  <input
+                    type="text"
+                    id="companyWebsite"
+                    placeholder="Company Name"
+                    {...formik.getFieldProps('companyWebsite')}
+                    className="form-input"
+                    required
+                  />
+                </div>
+              </div>
               <div className="form-element-spacing">
-                <label htmlFor="fName">First Name:</label>
-                <input
+                <textarea
                   type="text"
-                  id="fName"
-                  //a convenient way to attach Formik's field management functionality to 
-                  // a form input element in your React application.
-                  {...formik.getFieldProps('fName')}
+                  id="description"
+                  placeholder="Description*"
+                  {...formik.getFieldProps('description')}
                   className="form-input"
                   required
                 />
               </div>
-              <ErrorMessage name="fName" component="div" className="error-message" />
-
-              <div className="form-element-spacing">
-                <label htmlFor="lName">Last Name:</label>
-                <input
-                  type="text"
-                  id="lName"
-                  {...formik.getFieldProps('lName')}
-                  className="form-input"
-                  required
-                />
+              <div className="form-element-spacing" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <button type="submit" className="form-button">
+                  Submit
+                </button>
               </div>
-              <ErrorMessage name="lName" component="div" className="error-message" />
-
-              <div className="form-element-spacing">
-                <label htmlFor="dob">DOB:</label>
-                <input
-                  type="date"
-                  id="dob"
-                  {...formik.getFieldProps('dob')}
-                  className="form-input"
-                  required
-                />
-              </div>
-              <ErrorMessage name="dob" component="div" className="error-message" />
-
-              <div className="form-element-spacing">
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="email"
-                  id="email"
-                  {...formik.getFieldProps('email')}
-                  className="form-input"
-                  required
-                />
-              </div>
-              <ErrorMessage name="email" component="div" className="error-message" />
-
-              <div className="form-element-spacing">
-                <label htmlFor="password">Password:</label>
-                <input
-                  type="password"
-                  id="password"
-                  {...formik.getFieldProps('password')}
-                  className="form-input"
-                  required
-                />
-              </div>
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="error-message"
-              />
-
-              <div className="form-element-spacing">
-                <label htmlFor="role">Role:</label>
-                <select id="role" {...formik.getFieldProps('role')} className="form-select" required>
-                  {roleOptions.map((option) => (
-                    <option key={option.value} value={option.value} disabled={option.disabled}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <ErrorMessage name="role" component="div" className="error-message" />
-
-              <button type="submit" className="form-button">
-                Create Account
-              </button>
             </Form>
-          );
-        }}
-      </Formik>
+            
+            );
+          }}
+        </Formik>
+      </div>
     </div>
   );
 };
