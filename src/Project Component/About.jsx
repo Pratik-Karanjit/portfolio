@@ -22,7 +22,7 @@ const About = () => {
       <div className='description'>
         <div className={`content ${animate ? 'animated' : ''}`}>
           <div className='text'>
-          <h1>Hi, <br /> I'm Pratik</h1>
+          <h1>Hi, <br /> <i>I'm Pratik</i></h1>
           <h3>Based in Kathmandu, I am pursuing my Bachelors Degree<br></br> at Islington College.
           My skills lie in developing websites <br></br>and I have expertise in the MERN Stack. 
           Join me on my <br></br>journey as I create innovative web solutions.</h3>

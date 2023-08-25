@@ -5,11 +5,13 @@ import About from './Project Component/About.jsx';
 import Resume from './Project Component/Resume.jsx';
 import Contact from './Project Component/Contact.jsx';
 import '../src/Project CSS/navbar.css'; // Import the external CSS file
+import Footer from './Project Component/Footer.jsx';
 
 const WowProject = () => {
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const contactRef = useRef(null);
+  
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -17,6 +19,7 @@ const WowProject = () => {
 
   return (
     <div>
+      
       <NavBar
         scrollToAbout={() => scrollToSection(aboutRef)}
         scrollToResume={() => scrollToSection(resumeRef)}
@@ -33,6 +36,7 @@ const WowProject = () => {
 
       <div ref={contactRef}>
         <Contact />
+        <Footer />
       </div>
     </div>
   );
