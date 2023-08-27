@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Project CSS/page.css'; // Import the external CSS file
 import fbicon from '../Project CSS/mee.png';
-import logoicon from '../Project CSS/dev.png';
+import logoicon from '../Project CSS/logo.png';
 
 const About = () => {
   const [animate, setAnimate] = useState(false);
