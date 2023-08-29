@@ -11,6 +11,7 @@ import Navbar from "./Project Component/Navbar";
 import About from "./Project Component/About";
 import Resume from "./Project Component/Resume";
 import ContactPage from "./Project Component/Contact";
+import Footer from "./Project Component/Footer";
 
 // const WowProject = () => {
 //   const aboutRef = useRef(null);
@@ -77,7 +78,7 @@ const WowProject = () => {
   
         <div ref={contactRef}>
           <ContactPage />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     );

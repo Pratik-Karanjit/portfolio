@@ -65,10 +65,9 @@
     justify-content: space-between;
   }
   .error-message {
-    color: red;
+    color: white; 
     margin-top: 5px;
   }
-  
   /* Arrange First Name and Last Name in the same line */
   #fName,
   #lName {

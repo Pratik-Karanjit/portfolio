@@ -42,50 +42,52 @@
 
 
 
+// About.js
 import React, { useEffect, useState } from 'react';
 import fbicon from '../Project CSS/mee.png';
-import '../Project CSS/page.css'; // Import the external CSS file
-import meicon from '../Project CSS/logo.png'
+import '../Project CSS/page.css';
+import meicon from '../Project CSS/logo.png';
+import backgroundImg from '../Project CSS/black.jpg'; // Update the path and filename accordingly
+
 
 const About = () => {
-  const [animate, setAnimate] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setAnimate(true);
-    }, 500);
-
-    setTimeout(() => {
-      setAnimate(false);
-    }, 2500);
+    setFadeIn(true);
   }, []);
 
   return (
+    <section id="intro" style={{ backgroundImage: `url(${backgroundImg})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
+      <img src={meicon} alt="mee" style={{ height: '100px' }} />
 
-    <section id="intro">
-          <img src={meicon} alt='mee' style={{height:'100px'}}/>
-
-  <div className="container-lg">
-    <div className="row g-4 justify-content-center align-items-center">
-      <div className="col-md-5 text-center text-md-start mt-5">
-        <h1>
-          <div className="display-2">Hi,</div>
-          <div className="display-5 text-muted">I'm Pratik</div>
-        </h1>
-        <h3 className={`lead my-4 text-muted ${animate ? 'animated' : ''}`}>
-          Based in Kathmandu, I am pursuing my Bachelors Degree at Islington College.
-          My skills lie in developing websites and I have expertise in the MERN Stack.
-          Join me on my journey as I create innovative web solutions.
-        </h3>
+      <div className="container-lg">
+        <div className="row g-4 justify-content-center align-items-center">
+        <div className={`col-md-5 text-center text-md-start mt-5 fade-in ${fadeIn ? 'active' : ''}`}>
+  <h1>
+    <div className="display-1" style={{ color: 'white' }}>Hi,</div>
+    <div className="display-2" style={{ color: 'white' }}><i>I'm Pratik</i></div>
+  </h1>
+  <h3 className="lead my-4" style={{ color: 'white' }}>
+    Based in Kathmandu, I am pursuing my Bachelors Degree at Islington College.
+    My skills lie in developing websites and I have expertise in the MERN Stack.
+    Join me on my journey as I create innovative web solutions.
+  </h3>
+</div>
+          <div className="col-md-5 text-center d-md-block">
+            <img src={fbicon} className="img-fluid me" alt="me" />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </div>
+        </div>
       </div>
-      <div className="col-md-5 text-center d-none d-md-block">
-        <img src={fbicon} className="img-fluid me" alt="me" />
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
   );
-}
+};
 
 export default About;
+
+
