@@ -139,52 +139,47 @@
 }
 
 
-/* Resume Left Section */
-.resume-container .resume-left-section {
-  background-color: #252531; /* Dark color */
-  color: white;
-  width: 15%; /* Adjust width as needed */
+.resume-section {
+  background-color: #1a1a21; /* Light background color */
+  color: black;
   padding: 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  overflow-y: auto;
+  align-items: flex-start; /* Align content to the top */
+  position: relative; /* Add relative positioning */
+  min-height: 100vh; /* Set minimum height to full viewport height */
 }
 
-.resume-container .resume-photo img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.resume-container .resume-skills {
-  margin-top: 2rem;
-}
 .resume-left-section {
   background-color: #252531; /* Dark color */
   color: white;
-  width: 15%; /* Adjust width as needed */
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
+  width: 15%; /* Width of the left section */
+  height: 100%; /* Cover full height of the resume section */
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center;
+}
+
+.resume-main-content {
+  margin-left: 15%; /* Set margin to accommodate the left section */
+  width: 85%; /* Occupy 85% width */
+}
+
+.resume-photo {
+  margin-top: 5rem;
 }
 
 .resume-photo img {
   max-width: 100%;
-  height: auto;
+  margin-top: 1.5rem;
+  height: 8rem;
   border-radius: 50%;
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 .resume-skills {
@@ -213,4 +208,78 @@
 
 .resume-download {
   margin-top: auto;
+  margin-bottom: 1.5rem;
+}
+.resume-right-div {
+  background-color: #252531 !important; /* Lighter background color */
+  padding: 1rem 1rem 3rem 1rem;
+  border-radius: 1rem;
+  /* Add other styles as needed */
+}
+
+/* For screens smaller than 768px (adjust the breakpoint as needed) */
+@media (max-width: 768px) {
+  .resume-left-section {
+    width: 100%; /* Cover the full width on mobile */
+    position: static; /* Reset positioning */
+    margin-bottom: 1rem; /* Add some spacing below the left section */
+  }
+
+  .resume-main-content {
+    margin-left: 0; /* Reset margin on mobile */
+    width: 100%; /* Occupy full width on mobile */
+  }
+  
+  .circular-field {
+    margin-bottom: 0.5rem; /* Adjust spacing between circular fields */
+  }
+  
+  .resume-download {
+    text-align: center; /* Center the download button */
+  }
+}
+
+my-info{
+  display:flex; 
+}
+
+.circular-field {
+  text-align: center;
+}
+
+.progress-circle {
+  fill: transparent;
+  stroke: rgba(255, 255, 4, 0.955); /* Yellowish color */
+  stroke-width: 5; /* Adjust the stroke width as needed */
+  stroke-dasharray: 251.2; /* 2 * π * radius */
+  stroke-dashoffset: calc(251.2 - (251.2 * 70 / 100)); /* Adjust the percentage (80%) */
+  transition: stroke-dashoffset 0.5s ease-in-out; /* Add a transition for animation */
+}
+
+
+.progress-percentage {
+  font-size: 16px; /* Adjust the font size as needed */
+  font-weight: bold;
+  fill: white;
+}
+.reactjs-progress {
+  stroke-dashoffset: calc(251.2 - (251.2 * 80 / 100)); /* Adjust the percentage (90%) */
+}
+.expressjs-progress {
+  stroke-dashoffset: calc(251.2 - (251.2 * 75 / 100)); /* Adjust the percentage (90%) */
+}
+
+.nav-link {
+  color: white;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.mt-15 {
+  margin-top: 15rem !important;
 }

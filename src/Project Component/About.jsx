@@ -46,7 +46,6 @@
 import React, { useEffect, useState } from 'react';
 import fbicon from '../Project CSS/mee.png';
 import '../Project CSS/page.css';
-import meicon from '../Project CSS/logo.png';
 import backgroundImg from '../Project CSS/black.jpg'; // Update the path and filename accordingly
 
 
@@ -58,12 +57,11 @@ const About = () => {
   }, []);
 
   return (
-    <section id="intro" style={{ backgroundImage: `url(${backgroundImg})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh' }}>
-      <img src={meicon} alt="mee" style={{ height: '100px' }} />
+    <section id="intro" style={{ background: 'black', minHeight: '96vh' }}>
 
       <div className="container-lg">
         <div className="row g-4 justify-content-center align-items-center">
-        <div className={`col-md-5 text-center text-md-start mt-5 fade-in ${fadeIn ? 'active' : ''}`}>
+        <div className={`col-md-5 mt-15 text-center text-md-start fade-in ${fadeIn ? 'active' : ''}`}>
   <h1>
     <div className="display-1" style={{ color: 'white' }}>Hi,</div>
     <div className="display-2" style={{ color: 'white' }}><i>I'm Pratik</i></div>
@@ -75,7 +73,7 @@ const About = () => {
   </h3>
 </div>
           <div className="col-md-5 text-center d-md-block">
-            <img src={fbicon} className="img-fluid me" alt="me" />
+            <img src={fbicon} className="img-fluid me" alt="me" style={{position: 'absolute', right: '300px', bottom: '0', height: '700px'}}/>
             <br></br>
             <br></br>
             <br></br>

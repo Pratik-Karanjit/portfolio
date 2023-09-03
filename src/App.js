@@ -7,9 +7,7 @@ import WowProject from './WowProject';
 
 function App() {
   return (
-    <div className="App">
       <WowProject></WowProject>
-    </div>
   );
 }
 

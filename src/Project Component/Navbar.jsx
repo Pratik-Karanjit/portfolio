@@ -1,8 +1,11 @@
 import React from 'react';
+import meicon from '../Project CSS/logo.png';
 
 const Navbar = ({ scrollToAbout, scrollToResume, scrollToContact }) => {
   return (
-    <nav className='navbar navbar-expand-md navbar-light py-3'>
+    <nav className='navbar navbar-expand-md navbar-light' style={{background: 'black'}}>
+      <img src={meicon} alt="mee" style={{ height: '50px', marginLeft: '6rem' }} />
+
     <div className='container-xxl'>
       <a href='#intro' className='navbar-brand'>
         {/* <span className='fw-bold text-secondary'>
